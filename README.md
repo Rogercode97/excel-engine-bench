@@ -1,8 +1,6 @@
 # excel-engine-bench
 
-[![CI](https://github.com/<github-user>/excel-engine-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/<github-user>/excel-engine-bench/actions/workflows/ci.yml)
-
-> Replace `<github-user>` with your GitHub username after `gh repo create`.
+[![CI](https://github.com/Rogercode97/excel-engine-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/Rogercode97/excel-engine-bench/actions/workflows/ci.yml)
 
 Reproducible benchmark of four Excel reading strategies over a deterministic synthetic `.xlsx`:
 
