@@ -1,5 +1,9 @@
 # excel-engine-bench
 
+[![CI](https://github.com/<github-user>/excel-engine-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/<github-user>/excel-engine-bench/actions/workflows/ci.yml)
+
+> Replace `<github-user>` with your GitHub username after `gh repo create`.
+
 Reproducible benchmark of four Excel reading strategies over a deterministic synthetic `.xlsx`:
 
 | # | Engine | What it proves |
@@ -61,3 +65,7 @@ just generate 50000 && just bench
 
 Commit your `results/bench.json` + `results/system.json` next to hardware details
 (CPU, RAM, SSD/HDD, OS) or the numbers are anecdote, not evidence.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

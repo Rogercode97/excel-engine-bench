@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --locked --extra dev
+      - name: Contract tests
+        run: uv run pytest -q
+      - name: Benchmark smoke (5k rows, isolated subprocesses)
+        run: |
+          uv run python -m bench.generate --rows 5000 --seed 42 --out data/sales.xlsx
+          uv run python -m bench.runner --file data/sales.xlsx --repeats 2 --warmup 1 --out results/bench.json
+      - name: Upload bench report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench
+          path: results/bench.json
