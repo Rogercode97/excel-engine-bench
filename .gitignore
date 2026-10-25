@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 data/*.xlsx
 results/*.json
+!results/bench-1m.json
 results/*.md
 !results/.gitkeep
 odd/

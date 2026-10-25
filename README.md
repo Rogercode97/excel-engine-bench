@@ -48,6 +48,8 @@ just generate 1000000 && just bench
 
 ## Results
 
+Reference runs: [50k demo](docs/EXAMPLE.md) · **[1M rows](docs/bench-1m.md)**
+
 `just bench` writes `results/bench.json` and prints a Markdown table
 (`io_s` / `cpu_s` / `total_s` medians, `peak_rss_mb`, `tracemalloc_mb`, checksum).
 All engines must report the same checksum (`checksum_agreement=true`); if they

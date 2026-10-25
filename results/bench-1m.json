@@ -1,0 +1,44 @@
+{
+  "file": "data/sales-1m.xlsx",
+  "repeats": 3,
+  "warmup": 1,
+  "engines": {
+    "openpyxl": {
+      "io_s": 17.2806,
+      "cpu_s": 0.1601,
+      "total_s": 17.4402,
+      "peak_rss_mb": 914.66,
+      "tracemalloc_peak_mb": 279.47,
+      "checksum": 256572839.01,
+      "groups": 8
+    },
+    "pandas": {
+      "io_s": 3.1251,
+      "cpu_s": 0.0426,
+      "total_s": 3.1695,
+      "peak_rss_mb": 1767.2,
+      "tracemalloc_peak_mb": 384.44,
+      "checksum": 256572839.01,
+      "groups": 8
+    },
+    "polars": {
+      "io_s": 1.2647,
+      "cpu_s": 0.0044,
+      "total_s": 1.2691,
+      "peak_rss_mb": 397.05,
+      "tracemalloc_peak_mb": 14.45,
+      "checksum": 256572839.01,
+      "groups": 8
+    },
+    "duckdb": {
+      "io_s": 1.8309,
+      "cpu_s": 0.0086,
+      "total_s": 1.8399,
+      "peak_rss_mb": 146.78,
+      "tracemalloc_peak_mb": 7.46,
+      "checksum": 256572839.01,
+      "groups": 8
+    }
+  },
+  "checksum_agreement": true
+}
