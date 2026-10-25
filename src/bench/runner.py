@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import statistics
 import subprocess
 import sys
@@ -89,6 +90,7 @@ def main() -> None:
     checksums = {v["checksum"] for v in report["engines"].values()}
     report["checksum_agreement"] = len(checksums) == 1
 
+    os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     with open(args.out, "w") as fh:
         json.dump(report, fh, indent=2)
 

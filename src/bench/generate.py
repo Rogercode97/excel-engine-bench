@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import time
 
 import numpy as np
@@ -32,6 +33,7 @@ def generate(rows: int, seed: int, out: str) -> dict:
     montos[anom_idx[:half]] *= -1.0  # refunds (negative)
     montos[anom_idx[half:]] = np.round(montos[anom_idx[half:]] * 50.0, 2)  # outliers
 
+    os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     wb = xlsxwriter.Workbook(out, {"constant_memory": True})
     ws = wb.add_worksheet("sales")
     ws.write_row(0, 0, HEADER)
